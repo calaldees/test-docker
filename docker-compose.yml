@@ -1,0 +1,20 @@
+
+
+services:
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+
+  seb:
+    build:
+      context: ./
+    volumes:
+      - /mnt/c/Users/ac954/code:/app/code:ro
+    ports:
+      - 8000:8000
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 8001:80
